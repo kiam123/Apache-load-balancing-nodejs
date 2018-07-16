@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+    main-server:
+        build:
+            context: ./workspace
+        networks: 
+            - testing_net
+
+    server1:
+        image: centos:7
+        networks: 
+            - testing_net
+
+    server2:
+        image: centos:7
+        networks: 
+            - testing_net
+
+    server3:
+        image: centos:7
+        networks: 
+            - testing_net
+
+    server4:
+        image: centos:7
+        networks: 
+            - testing_net
+
+    server5:
+        image: centos:7
+        networks: 
+            - testing_net
+
+    server6:
+        image: centos:7
+        networks: 
+            - testing_net
+
+networks:
+    testing_net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16
