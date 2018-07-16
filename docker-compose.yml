@@ -1,45 +1,58 @@
 version: '3'
 
 services:
-    main-server:
-        build:
-            context: ./workspace
-        networks: 
-            - testing_net
+  main-server:
+    build:
+      context: ./ #Dockerfile 在哪裡
+      dockerfile:Dockerfile-centos #Dockerfile設定的名字，這裡我命名Dockerfile
+    networks: 
+      - testing_net
 
-    server1:
-        image: centos:7
-        networks: 
-            - testing_net
+  server1:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
-    server2:
-        image: centos:7
-        networks: 
-            - testing_net
+  server2:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
-    server3:
-        image: centos:7
-        networks: 
-            - testing_net
+  server3:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
-    server4:
-        image: centos:7
-        networks: 
-            - testing_net
+  server4:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
-    server5:
-        image: centos:7
-        networks: 
-            - testing_net
+  server5:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
-    server6:
-        image: centos:7
-        networks: 
-            - testing_net
+  server6:
+    build:
+      context: ./
+      dockerfile:Dockerfile-nodejs
+    networks: 
+      - testing_net
 
 networks:
-    testing_net:
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.28.0.0/16
+  testing_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
