@@ -7,6 +7,16 @@ networks:
 services:
   main-server:
     build:
+      context: ./
+    volumes:
+      - ./apache:/usr/local/apache2/conf
+    networks: 
+      - testing_net
+    ports:
+      - 8010:80
+
+  main-server2:
+    build:
       context: ./caddy
     volumes:
       - ./caddy/caddy:/etc/caddy
