@@ -8,6 +8,8 @@ services:
   main-server:
     build:
       context: ./caddy
+    volumes:
+      - ./caddy/caddy:/etc/caddy
     networks: 
       - testing_net
     ports:
