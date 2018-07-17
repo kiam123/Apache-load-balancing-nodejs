@@ -7,7 +7,7 @@ networks:
 services:
   main-server:
     build:
-      context: ./
+      context: ./caddy
     networks: 
       - testing_net
     ports:
