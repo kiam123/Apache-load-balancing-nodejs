@@ -10,7 +10,7 @@ services:
       context: ./
     networks: 
       - testing_net
-    port:
+    ports:
       - 8015:80
 
   server1:
