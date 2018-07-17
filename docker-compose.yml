@@ -8,8 +8,6 @@ services:
   main-server:
     build:
       context: ./
-    volumes:
-      - ./apache:/usr/local/apache2/conf
     networks: 
       - testing_net
     ports:
