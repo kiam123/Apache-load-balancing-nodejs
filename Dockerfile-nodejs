@@ -1,6 +1,8 @@
 FROM node:alpine
 
-COPY app /usr/src
+RUN mkdir /usr/src
+
+COPY app /usr/src/app
 
 RUN cd /usr/src/app && npm install
 
